@@ -41,8 +41,8 @@ module.exports = function(grunt) {
       },
       "sourcemap-test": {
         command: [
-            'node bin/lessc --source-map --source-map-inline test/less/import.less test/sourcemaps/import.css',
-            'node bin/lessc --source-map --source-map-inline test/less/sourcemaps/basic.less test/sourcemaps/basic.css',
+            'node bin/lessc --source-map --source-map-map-inline test/less/import.less test/sourcemaps/import.css',
+            'node bin/lessc --source-map --source-map-map-inline test/less/sourcemaps/basic.less test/sourcemaps/basic.css',
             'node node_modules/http-server/bin/http-server test/sourcemaps -p 8084'].join('&&')
       }
     },
@@ -95,7 +95,7 @@ module.exports = function(grunt) {
       files: {
         src: [
           'Gruntfile.js',
-          'lib/**/*.js'
+          'lib/less/**/*.js'
         ]
       }
     },
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
       },
       main: {
         // src is used to build list of less files to compile
-        src: ['test/less/*.less', '!test/less/javascript.less', '!test/less/urls.less'],
+        src: ['test/less/*.less', '!test/less/javascript.less', '!test/less/urls.less', '!test/less/empty.less'],
         options: {
           helpers: 'test/browser/runner-main-options.js',
           specs: 'test/browser/runner-main-spec.js',
@@ -232,6 +232,11 @@ module.exports = function(grunt) {
     'uglify:stable'
   ]);
 
+  // Release Rhino Version
+  grunt.registerTask('rhino', [
+    'concat:rhino'
+  ]);
+  
   // Run all browser tests
   grunt.registerTask('browsertest', [
     'browser',

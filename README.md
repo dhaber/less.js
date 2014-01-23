@@ -1,4 +1,4 @@
-# [Less.js v1.6.0](http://lesscss.org)
+# [Less.js v1.6.1](http://lesscss.org)
 
 > The **dynamic** stylesheet language. [http://lesscss.org](http://lesscss.org).
 
@@ -348,3 +348,4 @@ Licensed under the [Apache License](LICENSE).
 [issues]: https://github.com/less/less.js/issues "GitHub Issues for Less.js"
 [wiki]: https://github.com/less/less.js/wiki "The official wiki for Less.js"
 [download]: https://github.com/less/less.js/zipball/master "Download Less.js"
+
